@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+var isEmployee = (function () { 
+var employee = true;
+return { 
+  or  : function (p1) { return employee || p1; },
+  and : function (p2) { return employee && p2; } 
+} 
+})();
+var student = false, male = true, female = false;
+var isValidPerson = isEmployee.and(student);
+console.log('isValidPerson 1: '+isValidPerson);
+isValidPerson = isEmployee.or(male);
+console.log('isValidPerson 2: '+isValidPerson);
+isValidPerson = isEmployee.or(female);
+console.log('isValidPerson 3: '+isValidPerson);
+</script>
+
+</body>
+</html>
